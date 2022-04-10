@@ -1,4 +1,3 @@
-import sys
 from settings import config
 from colorama import Fore
 import platform
@@ -8,6 +7,8 @@ if __name__ == '__main__':
 
     while True:
         config.clear_screen()
+        config.check_version()
+        config.check_module()
         config.banner()
         config.main_list()
 
@@ -17,7 +18,7 @@ if __name__ == '__main__':
 
         if commend == "0":
             print(Fore.LIGHTRED_EX + "\nbye ):")
-            sys.exit()
+            exit()
 
         elif commend == "1":
             config.clear_screen()

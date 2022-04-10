@@ -1,4 +1,5 @@
 import os
+import platform
 from colorama import Fore
 from time import sleep
 
@@ -7,13 +8,32 @@ def banner():
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
-
+    
+# Check Python Version 
 def check_version():
-    pass
+    python_version = platform.python_version()
 
+    if '3' in python_version:
+        pass
+    else:
+        print("Please Install Python3")
+        exit()
+
+# Check Python Modules 
 def check_module():
-    pass
+    try:
+        from colorama import Fore
+    except ModuleNotFoundError:
+        print("Please Install colorama ( pip install colorama )")
+        exit()
 
+    try:
+        import requests
+    except ModuleNotFoundError:
+        print("\n\tPlease Install requests ( pip install requests )\n")
+        exit()
+
+# Show List
 def main_list():
     print(Fore.LIGHTYELLOW_EX + "[+] Chosse One Options\n")
     sleep(0.2)
