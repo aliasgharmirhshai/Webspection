@@ -2,11 +2,21 @@ import os
 import platform
 from colorama import Fore
 from time import sleep
-import run
+
+BLUE = '\033[34m'
 
 def banner():
-    RED = '\033[31m'
-    print(RED + "Banner\n")
+    sleep(0.1)
+    print(BLUE + """
+    ░██╗░░░░░░░██╗███████╗██████╗░░██████╗██████╗░███████╗░█████╗░████████╗██╗░█████╗░███╗░░██╗
+    ░██║░░██╗░░██║██╔════╝██╔══██╗██╔════╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██║██╔══██╗████╗░██║
+    ░╚██╗████╗██╔╝█████╗░░██████╦╝╚█████╗░██████╔╝█████╗░░██║░░╚═╝░░░██║░░░██║██║░░██║██╔██╗██║
+    ░░████╔═████║░██╔══╝░░██╔══██╗░╚═══██╗██╔═══╝░██╔══╝░░██║░░██╗░░░██║░░░██║██║░░██║██║╚████║
+    ░░╚██╔╝░╚██╔╝░███████╗██████╦╝██████╔╝██║░░░░░███████╗╚█████╔╝░░░██║░░░██║╚█████╔╝██║░╚███║
+    ░░░╚═╝░░░╚═╝░░╚══════╝╚═════╝░╚═════╝░╚═╝░░░░░╚══════╝░╚════╝░░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝
+""")
+    sleep(0.1)
+
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -37,17 +47,17 @@ def check_module():
 
 # Show List
 def main_list():
-    print(Fore.LIGHTYELLOW_EX + "[+] Chosse One Options\n")
+    print(Fore.LIGHTBLUE_EX + "[+] Chosse One Options\n")
     sleep(0.2)
-    print(Fore.LIGHTRED_EX + "OPTIONS:\n")
+    print(Fore.CYAN + "OPTIONS:\n")
     sleep(0.1)
-    print(Fore.LIGHTWHITE_EX + "\t[1] Information Gathering\n")
+    print(Fore.CYAN + "\t[1] Information Gathering\n")
     sleep(0.1)
-    print(Fore.LIGHTWHITE_EX + "\t[2] Scanning\n")
+    print(Fore.CYAN + "\t[2] Scanning\n")
     sleep(0.1)
-    print(Fore.LIGHTWHITE_EX + "\t[3] Web Attacking\n")
+    print(Fore.CYAN + "\t[3] Web Attacking\n")
     sleep(0.1)
-    print(Fore.LIGHTWHITE_EX + "\t[0] EXIT\n")
+    print(Fore.LIGHTRED_EX + "\t[0] EXIT\n")
     sleep(0.1)
 
 # Information Gathering
