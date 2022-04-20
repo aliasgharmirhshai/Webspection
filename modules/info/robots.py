@@ -4,6 +4,7 @@ from colorama import Fore, Style
 
 def __start__():
     try:
+        print(Fore.LIGHTBLUE_EX + "\nPlease Enter the address Without ( http:// and https:// )")
         url = input(Style.BRIGHT + Fore.LIGHTYELLOW_EX + "Enter Url :> ")
 
         if 'http://' in url:
@@ -27,3 +28,5 @@ def __start__():
         print(Fore.LIGHTRED_EX + '\n[-] Something Error Please Check Internet and Please Enter the address Without ( http:// and https:// )\n')
     except requests.exceptions.InvalidURL:
         print(Fore.LIGHTRED_EX + '\n[-] Please Enter Url\n')
+    except:
+        print(Fore.LIGHTRED_EX + "By |:")

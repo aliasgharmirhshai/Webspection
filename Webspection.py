@@ -2,7 +2,7 @@ import os
 import sys
 from colorama import Fore, Style
 from time import sleep
-from modules.info import robots
+from modules.info import robots, dns_lookup
 
 BLUE = '\033[34m'
 
@@ -36,25 +36,10 @@ def help_list():
 
     Help List:
 
-    INFORMATION GATHERING
-        {Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} python3 Webspection.py -I -r : Find robots.txt File
-    SCANNING
-
-    ATTACKING
+        {Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} python3 Webspection.py -rb : Find robots.txt File
+        {Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} python3 Webspection.py -mx : Find MX Dns ( Mail Server )
 
 """)
-
-# Information Handler
-def info():
-    clear_screen()
-    banner()
-
-    if sys.argv[2] == '-r':
-        robots.__start__()
-
-# Scanning Handler
-def scan():
-    print("Scan")
 
 # Project Handelr
 def start():
@@ -63,12 +48,12 @@ def start():
         if sys.argv[1] == '--help':
             help_list()
 
-        elif sys.argv[1] == '-I':
-            info()
-        
-        elif sys.argv[1] == '-S':
-            scan()
+        elif sys.argv[1] == '-rb':
+            robots.__start__()
 
+        elif sys.argv[1] == '-mx':
+            dns_lookup.mx_rec()
+        
         else:
             print(Fore.LIGHTRED_EX + f"Command Not Found\n")
     
