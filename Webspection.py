@@ -34,10 +34,12 @@ def help_list():
     Version : 0.1.0
     Github : https://github.com/aliasgharmirhshai
 
-    Help List:
+    usage: Webspection [--help] [--dns] [-rb]
 
+    Examples:
         {Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} python3 Webspection.py -rb : Find robots.txt File
-        {Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} python3 Webspection.py -mx : Find MX Dns ( Mail Server )
+        {Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} python3 Webspection.py --dns -Mx : Find MX Dns ( Mail Server )
+        {Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} python3 Webspection.py --dns -Ns : Name Server Lookup ( Dns )
 
 """)
 
@@ -51,8 +53,8 @@ def start():
         elif sys.argv[1] == '-rb':
             robots.__start__()
 
-        elif sys.argv[1] == '-mx':
-            dns_lookup.mx_rec()
+        elif sys.argv[1] == '--dns':
+            dns_lookup.dns_handler()
         
         else:
             print(Fore.LIGHTRED_EX + f"Command Not Found\n")
