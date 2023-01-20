@@ -47,7 +47,6 @@ def help_list():
 
 # Project Handelr
 def start():
-
     try:
         if sys.argv[1] == '--help':
             help_list()

@@ -1,31 +1,26 @@
 import dns.resolver
-from colorama import Fore, Style
+from colorama import Fore
 import sys
+from ..lib import get_target
 
-# Get Target Url
-try:
-    if sys.argv[3] == '--host':
-        host = sys.argv[4]
-    else:
-        print('Command Not Found\n')
-except IndexError:
-    print('Pleases Enter url')
 
 # Dns Tools Handler
 def dns_handler():
 
+    target = get_target(command_range=3, url_range=4)
+
     if sys.argv[2] == '-Mx':
-        mx_rec()
+        mx_rec(host=target)
 
     elif sys.argv[2] == "-Ns":
-        ns_lookup()
+        ns_lookup(host=target)
 
     else:
         print(Fore.LIGHTRED_EX + f"Command Not Found\n")
 
 
 # MX ( Find Mail Server )
-def mx_rec():   
+def mx_rec(host):   
         try:            
             answers = dns.resolver.resolve(host, 'MX')
             for rdata in answers:
@@ -39,7 +34,7 @@ def mx_rec():
             print(Fore.LIGHTRED_EX + "By |:")
 
 # Name Server
-def ns_lookup():
+def ns_lookup(host):
     try:
         answers = dns.resolver.query(host,'NS')
         for server in answers:

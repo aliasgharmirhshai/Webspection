@@ -1,18 +1,17 @@
 import requests
 from colorama import Fore, Style
-
+from ..lib import get_target
 
 def __start__():
     try:
-        print(Fore.LIGHTBLUE_EX + "\nPlease Enter the address Without ( http:// and https:// )")
-        url = input(Style.BRIGHT + Fore.LIGHTYELLOW_EX + "Enter Url :> ")
+        host = get_target(command_range=2, url_range=3)
 
-        if 'http://' in url:
+        if 'https://' in host:
             pass
         else:
-            url = f'http://{url}'
+            host = f'https://{host}'
 
-        response = requests.get(f'{url}/robots.txt').text
+        response = requests.get(f'{host}/robots.txt').text
         print(Fore.LIGHTWHITE_EX + response)
 
         save_file = input(Fore.LIGHTGREEN_EX + "Do You Want The Output To be Saved? (y or n) :> ")
