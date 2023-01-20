@@ -16,7 +16,9 @@ def banner():
     ░╚██╗████╗██╔╝█████╗░░██████╦╝╚█████╗░██████╔╝█████╗░░██║░░╚═╝░░░██║░░░██║██║░░██║██╔██╗██║       
     ░░████╔═████║░██╔══╝░░██╔══██╗░╚═══██╗██╔═══╝░██╔══╝░░██║░░██╗░░░██║░░░██║██║░░██║██║╚████║
     ░░╚██╔╝░╚██╔╝░███████╗██████╦╝██████╔╝██║░░░░░███████╗╚█████╔╝░░░██║░░░██║╚█████╔╝██║░╚███║
-    ░░░╚═╝░░░╚═╝░░╚══════╝╚═════╝░╚═════╝░╚═╝░░░░░╚══════╝░╚════╝░░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝
+    ░░░╚═╝░░░╚═╝░░╚══════╝╚═════╝░╚═════╝░╚═╝░░░░░╚══════╝░╚════╝░░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝\n
+            
+    \tYou Can Enter ( python3 Webspection.py --help ) And See Options\n
 """)
     sleep(0.1)
 
@@ -34,7 +36,7 @@ def help_list():
     Version : 0.1.0
     Github : https://github.com/aliasgharmirhshai
 
-    usage: Webspection [--help] [--dns] [-rb]
+    usage: Webspection [--help] [--dns] [-rb] 
 
     Examples:
         {Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} python3 Webspection.py -rb : Find robots.txt File
@@ -63,7 +65,6 @@ def start():
         clear_screen()
         banner()
         print(Style.BRIGHT + "\tPlease Choose One Option\n")
-        print(Fore.LIGHTYELLOW_EX + "\tYou Can Enter ( python3 Webspection.py --help ) And See Options\n")
     
 # Run 
 if __name__ == '__main__':
