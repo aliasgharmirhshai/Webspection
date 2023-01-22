@@ -2,30 +2,9 @@ import os
 import sys
 from colorama import Fore, Style
 from time import sleep
-from modules.info import robots, dns_lookup
+from config.modules import robots, dns_lookup
+from config.lib import clear_screen, banner
 
-BLUE = '\033[34m'
-
-
-
-def banner():
-    sleep(0.1)
-    print(Style.BRIGHT + BLUE +"""\t\n
-    ░██╗░░░░░░░██╗███████╗██████╗░░██████╗██████╗░███████╗░█████╗░████████╗██╗░█████╗░███╗░░██╗  
-    ░██║░░██╗░░██║██╔════╝██╔══██╗██╔════╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██║██╔══██╗████╗░██║     
-    ░╚██╗████╗██╔╝█████╗░░██████╦╝╚█████╗░██████╔╝█████╗░░██║░░╚═╝░░░██║░░░██║██║░░██║██╔██╗██║       
-    ░░████╔═████║░██╔══╝░░██╔══██╗░╚═══██╗██╔═══╝░██╔══╝░░██║░░██╗░░░██║░░░██║██║░░██║██║╚████║
-    ░░╚██╔╝░╚██╔╝░███████╗██████╦╝██████╔╝██║░░░░░███████╗╚█████╔╝░░░██║░░░██║╚█████╔╝██║░╚███║
-    ░░░╚═╝░░░╚═╝░░╚══════╝╚═════╝░╚═════╝░╚═╝░░░░░╚══════╝░╚════╝░░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝\n
-            
-    \tYou Can Enter ( python3 Webspection.py --help ) And See Options\n
-""")
-    sleep(0.1)
-
-
-def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    
 
 # Show List
 def help_list():
@@ -67,5 +46,4 @@ def start():
     
 # Run 
 if __name__ == '__main__':
-    
     start()
